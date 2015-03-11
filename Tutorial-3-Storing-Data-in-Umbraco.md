@@ -3,7 +3,7 @@ This is Tutorial three in a series of beginner tutorials for Umbraco 7
 
 *   [Tutorial 1 - How to setup Umbraco 7 with Visual Studio](Tutorial-1-Umbraco7-Setup.md)
 *   [Tutorial 2 - Creating a webpage](Tutorial-2-Creating-a-Webpage.md)
-*   [Tutorial 3 - Creating and Storing Data in Umbraco](Tutorial-3-Storing-data-in-Umbraco.md)
+*   [Tutorial 3 - Creating and Storing Data in Umbraco](Tutorial-3-Storing-Data-in-Umbraco.md)
 
 #### Creating the Document Type
 

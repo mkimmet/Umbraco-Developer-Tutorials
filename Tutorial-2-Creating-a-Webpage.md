@@ -7,7 +7,7 @@ This is Tutorial two in a series of beginner tutorials for Umbraco 7
 
 *   [Tutorial 1 - How to setup Umbraco 7 with Visual Studio](Tutorial-1-Umbraco7-Setup.md)
 *   [Tutorial 2 - Creating a webpage](Tutorial-2-Creating-a-Webpage.md)
-*   [Tutorial 3 - Creating and Storing Data in Umbraco](Tutorial-3-Storing-data-in-Umbraco.md)
+*   [Tutorial 3 - Creating and Storing Data in Umbraco](Tutorial-3-Storing-Data-in-Umbraco.md)
 
 #### Creating the Document Type
 
@@ -67,4 +67,4 @@ You just made your first page and change the view for it!
 One thing to keep in mind for the future is that this one view will be
 used for all content that you create using the WebPage Document Type.
 
-[Next>> Tutorial 3 - Creating and Storing Data in Umbraco](Tutorial-3-Storing-data-in-Umbraco.md)
+[Next>> Tutorial 3 - Creating and Storing Data in Umbraco](Tutorial-3-Storing-Data-in-Umbraco.md)

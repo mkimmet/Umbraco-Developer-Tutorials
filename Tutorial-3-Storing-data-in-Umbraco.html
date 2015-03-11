@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css' />
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css' />
+  <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+  <!--[if lt IE 9]>
+  <script src="//html5shiv.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
+<title>Umbraco 7 developer tutorials - Storing and creating data in Umbraco 7</title>
+</head>
+<body>
+  <header>
+    <div class="inner">
+      <h1>Umbraco Developer Tutorials</h1>
+      <h2>Beginner Umbraco tutorials for developers</h2>
+      <a href="https://github.com/mkimmet/Umbraco-Developer-Tutorials" class="button">
+        <small>View project on</small> GitHub</a>
+      </div>
+    </header>
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <!--<p style="text-align:center;"><img src="images/umbraco-logo.png"/></p>-->
+          <h3>
+            <a id="Tutorial1" class="anchor" href="#Tutorial1" aria-hidden="true">
+              <span class="octicon octicon-link">
+              </span>
+            </a>
+            Tutorial #3 - Storing Data in Umbraco
+          </h3>
+          <h4>Creating the Document Type</h4>
+          <p>
+            Now we are going to create a web page in the root of the site and make a change to the view file.
+          </p>
+          <p>
+            In the Umbraco admin, on the left menu click on Settings.
+          </p>
+          <p>
+            Right click on Document Types and select Create.
+          </p>
+          <p><img src="images/image21.png"></p>
+          <p>
+            Give you Type a name like Base. This will be the root document type node which we will
+            create other document types off of for organizational purposes.
+          </p>
+          <p>Right Click on the new Base Document Type and select Create.</p>
+          <p><img src="images/image09.png"></p>
+          <p>Give this new document type a name like WebPage and click create.</p>
+          <p>Click on the Structure tab for your WebPage Document Type and then
+            check the box to “Allow at root” and then also check the box for “WebPage”
+            for “Allowed child node types”</p>
+          <p><img src="images/image15.png"></p>
+          <p>Now it’s time to create the webpage.  Click on the content menu item on the left menu.
+            Right Click on Content and select Create</p>
+          <p><img src="images/image17.png"></p>
+          <p>Select WebPage for the document type. At the top of the page enter a name for the webpage.
+            Let's call it Home Page. Click on Save and publish.</p>
+          <p><img src="images/image07.png"></p>
+          <p>Now we have a webpage at the root of our site.  If you go to
+            <a href="http://myweb">http://myweb</a> at this point you should see a blank page, let’s add some content.</p>
+          <p>Back in Visual Studio, under the Solution Explorer make sure you click on the button to
+            “Show All Files” (it should be the fourth from the right) and then expand the Views folder
+            and then click the Refresh button (it’s two over from the “Show All Files Button”)
+          </p>
+          <p><img src="images/image02.png"></p>
+          <p>Now you should see 2 new .cshtml view files, one for WebPage and one for Base.
+            Right click on the Webpage.cshtml file and select “Include in Project”</p>
+          <p>Next Open up the WebPage.cshtml page and add the following and save:</p>
+<pre><code>&lt;h1&gt;Howdy, this is the homepage!&lt;/h1&gt;</code></pre>
+          <p>Now go back and refresh your browser and this text should now be visible!
+            You just made your first page and change the view for it!</p>
+          <p><img src="images/image14.png"></p>
+          <p>One thing to keep in mind for the future is that this one view will be
+            used for all content that you create using the WebPage Document Type.
+          </p>
+          <p><a href="Tutorial-3-Storing-data-in-Umbraco.html">Next>> Tutorial #3 - Creating and Storing Data in Umbraco</a></p>
+        </section>
+        <aside id="sidebar">
+          <h2><a href="index.html">Home</a></h2>
+          <h2><a href="Tutorial-1-Umbraco7-Setup.html">Tutorial #1</a></h2>
+          <h2><a href="Tutorial-2-Creating-a-Webpage.html">Tutorial #2</a></h2>
+          <h2><a href="Tutorial-3-Storing-data-in-Umbraco.html">Tutorial #3</a></h2>
+          <!--
+          <a href="https://github.com/mkimmet/Umbraco-Developer-Tutorials/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/mkimmet/Umbraco-Developer-Tutorials/tarball/master" class="button">
+            <small>Download</small>            .tar.gz file
+          </a>-->
+          <p>
+            This page was generated by <a href="https://pages.github.com">GitHub Pages</a>
+            using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>
+            modified by <a href="https://github.com/mkimmet">mkimmet</a>.
+          </p>
+        </aside>
+      </div>
+    </div>
+</body>
+</html>

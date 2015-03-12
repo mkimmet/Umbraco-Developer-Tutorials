@@ -312,11 +312,15 @@ namespace myweb.Controllers
             IDataTypeDefinition datatype = Services.DataTypeService.GetDataTypeDefinitionByName("Lunch Choices");
             DataTypeService dts = new DataTypeService();
 
+            //Get the parent ID of content you want to attach the submission to
+            var categoryContentType = Services.ContentTypeService.GetContentType("Lunchformpage");
+            var parent = Services.ContentService.GetContentOfContentType(categoryContentType.Id).FirstOrDefault(x => x.Name == "Lunch Chooser");
+
             //Create a new content item under a given parent (1056)
             var contentService = Services.ContentService;
             var LunchContent = contentService.CreateContent(
                 lunch.FirstName + " " + lunch.LastName + DateTime.Now, //Name of the new Lunch Submission content
-                1056, //Content Parent - Hardcoding this number is not good practice, we'll cover doing this dynamically later
+                parent.Id, //Content Parent ID, where these submissions will live under
                 "Lunchchoicedata", // the alias of the Document Type we are adding
                 0); //the user adding the record, 0 is the admin
 
@@ -342,13 +346,11 @@ namespace myweb.Controllers
 ```
 There are some things to note about the code above, take a look through the comments to see some of the notes.  First notice how this controller inherits from the SurfaceController.  The SurfaceController is a custom MVC controller created by Umbraco.  It can do pretty much what a standard MVC controller can do, but it also has some Umbraco specific abilities as well.
 
-Next, notice that we create a new content item of type Lunchchoicedata under parent 1056.   Lunchchoicedata is the alias for our Document Type.  You can find this by going to the Umbraco admin and clicking on Settings, expanding out the Document Types, and clicking on the LunchChoiceData Document Type, and on the Info tab there is an Alias.  This is the alias for this document type.
+One of the first things we need to do is get the Parent id so that we can attach the submission to our Lunchformpage and see the results in the back end.  To do this we first get a reference to the Lunchformpage document type and then we search all the documents of that type for the name of our webpage which is "Lunch Chooser."  Then we can get the parent id by using parent.id.
+
+Notice that we create a new content item of type Lunchchoicedata under a parent id.   Lunchchoicedata is the alias for our Document Type.  You can find this by going to the Umbraco admin and clicking on Settings, expanding out the Document Types, and clicking on the LunchChoiceData Document Type, and on the Info tab there is an Alias.  This is the alias for this document type.
 
 ![](images/image28.png)
-
-With regards to finding the parent, we will rerefence the parent’s content id.  This is not a good way to do this since the content id could be different when we publish our site to a production server.  In a future tutorial we will show how to get this id dynamically but for now to find the content id, go to Content in the Umbraco admin, expand the content Home Page node and click on Lunch Chooser in the Properties tab you should see the Id which will hopefully be 1056 for you, if it’s not you will need to change the number in the code that we have above:
-
-![](images/image000.png)
 
 The next thing to notice in the LunchSurfaceController.cs is that we have to get prevalue id of the selected item from the dropdown.  The way the custom dropdown works is that each item in the dropdown has a certain id associated with it.  We have to find this id based on the item that was selected in the dropdown box, then we can insert that id into the Umbraco content we are creating.
 

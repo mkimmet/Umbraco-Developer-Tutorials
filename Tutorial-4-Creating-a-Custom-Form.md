@@ -23,7 +23,7 @@ Now it’s time for us to return to Visual Studio and start doing some coding.  
 }
 ```
 In order for this to work we now need to create the _LunchForm partial view and the Lunch model.  Lets start with the Lunch model.  In Visual Studio right click on the Models folder in the Solution Explorer and create a new class file called Lunch.cs.  Enter the following code for your model:
-```
+```cs
 using System;
 using System.ComponentModel.DataAnnotations;
 
@@ -41,7 +41,7 @@ namespace myweb.Models
 This contains fields for all the properties we created plus a new one, the UmbracoID.  This is a value that is created by Umbraco automatically for each item and in the future we will be able to obtain certain items by their UmbracoID’s so it’s good to have access to it.
 
 Save this file.  Before we return to the form, lets create a layout page using bootstrap so that our form will look presentable.  In the Views folder create a view called _Layout.cshtml, and give it the following code and save, this is a modified template from getbootstrap.com:
-```
+```xml
 @{
     Layout = null;
 }
@@ -85,7 +85,7 @@ Save this file.  Before we return to the form, lets create a layout page using b
 </html>
 ```
 The code above is straightforward html with Boostrap built in.  It uses a custom.css file, which we will need to add as well.  In Visual Studio in the Solution Explorer right click on the css folder that is hidden and select “Include in project.”  Right click the css folder and create a new stylesheet called custom.css.  Now, put the following code in the css file, this is a modified CSS file that was taken from getbootstrap.com.
-```
+```css
 /* Space out content a bit */
 body {
   padding-top: 20px;
@@ -214,7 +214,7 @@ h2 {margin-top:0px;}
 }
 ```
 Now create a new partial view under Views/Partials called  _LunchForm.cshtml view and add the following code to it and save.
-```
+```xml
 @using Umbraco.Core.Services
 @using myweb.Controllers
 @model myweb.Models.Lunch
@@ -283,7 +283,7 @@ Now create a new partial view under Views/Partials called  _LunchForm.cshtml vie
 You will notice that we are creating the SelectList in the cshtml, it finds the data type for Lunch Choices and then retrieves it’s prevalues and then builds the selectlist.  This is conscious decision which breaks a little from true MVC.  One way you can create an Umbraco form is to do it more like true MVC and create a controller which “hijacks” the routing in Umbraco, however, rather than do it that way in this tutorial we are using Umbraco to create the content page and control the routing and essentially sending our users directly into the view.  At times this is a little easier.  In the future hopefully we will also do a tutorial showing the process of hijacking the route, but for now we will do it this way.
 
 Although we are not hijacking the route, this form does submit to the LunchSurfaceController’s Submit action where we do the processing of the form.  You might notice that there is a red squiggly warning under the LunchSurfaceController reference.  We need to make that.  Lets do that now.  Create a controller in the Controllers folder called LunchSurfaceController.cs and then enter the following code and save the file.
-```
+```cs
 using System;
 using System.Collections.Generic;
 using System.Linq;

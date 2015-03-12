@@ -40,7 +40,7 @@
     Html.RenderPartial("~/Views/Partials/_LunchForm.cshtml", new myweb.Models.Lunch());
 }</code></pre>
           <p>In order for this to work we now need to create the _LunchForm partial view and the Lunch model.  Lets start with the Lunch model.  In Visual Studio right click on the Models folder in the Solution Explorer and create a new class file called Lunch.cs.  Enter the following code for your model:</p>
-{% highlight cs %}using System;
+{<pre><code>}using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace myweb.Models
@@ -52,7 +52,7 @@ namespace myweb.Models
         public string LastName { get; set; }
         public string LunchChoice { get; set; }
     }
-}{% endhighlight %}
+}</code></pre>
 
           <p>This contains fields for all the properties we created plus a new one, the UmbracoID.  This is a value that is created by Umbraco automatically for each item and in the future we will be able to obtain certain items by their UmbracoID’s so it’s good to have access to it.</p>
           <p>Save this file.  Before we return to the form, lets create a layout page using bootstrap so that our form will look presentable.  In the Views folder create a view called _Layout.cshtml, and give it the following code and save, this is a modified template from getbootstrap.com:</p>

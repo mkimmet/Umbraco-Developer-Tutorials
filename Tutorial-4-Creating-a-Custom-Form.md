@@ -12,7 +12,7 @@ in Umbraco.
 *   [Tutorial 4 - Creating a Custom Form in Umbraco](Tutorial-4-Creating-a-Custom-Form.md)
 
 Now it’s time for us to return to Visual Studio and start doing some coding.  So open up the myweb project in Visual Studio and refresh the Solution Explorer.  You should now see a LunchFormPage.cshtml view under the Views Folder.  Right click this file and select “Include in Project” and then open the file.  Add the following code and save the file.
-```
+```cs
 @inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
     Layout = "~/Views/_Layout.cshtml";

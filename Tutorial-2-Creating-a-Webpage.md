@@ -3,7 +3,8 @@
 ## Beginner Umbraco tutorials for developers
 
 ### Tutorial 2 - Creating a Webpage
-This is Tutorial two in a series of beginner tutorials for Umbraco 7
+This is Tutorial two in a series of beginner tutorials for Umbraco 7, that create a custom form
+in Umbraco.
 
 *   [Tutorial 1 - How to setup Umbraco 7 with Visual Studio](Tutorial-1-Umbraco7-Setup.md)
 *   [Tutorial 2 - Creating a webpage](Tutorial-2-Creating-a-Webpage.md)

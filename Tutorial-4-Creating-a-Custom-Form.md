@@ -46,43 +46,43 @@ Save this file.  Before we return to the form, lets create a layout page using b
     Layout = null;
 }
 
-&lt;!DOCTYPE html>
-&lt;html>
-&lt;head>
-    &lt;meta charset="utf-8">
-    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge">
-    &lt;meta name="viewport" content="width=device-width, initial-scale=1">
-    &lt;title>myweb&lt;/title>
-    &lt;link href="http://ajax.aspnetcdn.com/ajax/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet" />
-    &lt;link href="~/css/custom.css" rel="stylesheet" />
-    &lt;script src="https://code.jquery.com/jquery-1.11.2.min.js">&lt;/script>
-    &lt;link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300' rel='stylesheet' type='text/css'>
-&lt;/head>
-&lt;body>
-    &lt;div class="container">
-        &lt;div class="header">
-            &lt;nav>
-                &lt;ul class="nav nav-pills pull-right" role="navigation">
-                    &lt;li role="presentation" class="active">&lt;a href="/">Home&lt;/a>&lt;/li>
-                    &lt;li role="presentation">
-                        &lt;a href="/Lunch-Chooser" id="LunchForm">
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>myweb</title>
+    <link href="http://ajax.aspnetcdn.com/ajax/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/custom.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300' rel='stylesheet' type='text/css'>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <nav>
+                <ul class="nav nav-pills pull-right" role="navigation">
+                    <li role="presentation" class="active"><a href="/">Home</a></li>
+                    <li role="presentation">
+                        <a href="/Lunch-Chooser" id="LunchForm">
                             Lunch Chooser
-                        &lt;/a>
-                    &lt;/li>
-                &lt;/ul>
-            &lt;/nav>
-            &lt;h3 class="text-muted main-title">myweb&lt;/h3>
-        &lt;/div>
-        &lt;div class="well main-content">
-            &lt;p class="lead">@RenderBody()&lt;/p>
-        &lt;/div>
-        &lt;footer class="footer">
-            &lt;p>&copy; myweb&lt;/p>
-        &lt;/footer>
-    &lt;/div>
-    &lt;script src="http://ajax.aspnetcdn.com/ajax/bootstrap/3.3.2/bootstrap.min.js">&lt;/script>
-&lt;/body>
-&lt;/html>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <h3 class="text-muted main-title">myweb</h3>
+        </div>
+        <div class="well main-content">
+            <p class="lead">@RenderBody()</p>
+        </div>
+        <footer class="footer">
+            <p>&copy; myweb</p>
+        </footer>
+    </div>
+    <script src="http://ajax.aspnetcdn.com/ajax/bootstrap/3.3.2/bootstrap.min.js"></script>
+</body>
+</html>
 ```
 The code above is straightforward html with Boostrap built in.  It uses a custom.css file, which we will need to add as well.  In Visual Studio in the Solution Explorer right click on the css folder that is hidden and select “Include in project.”  Right click the css folder and create a new stylesheet called custom.css.  Now, put the following code in the css file, this is a modified CSS file that was taken from getbootstrap.com.
 ```
@@ -222,37 +222,37 @@ Now create a new partial view under Views/Partials called  _LunchForm.cshtml vie
     Layout = null;
 }
 
-@using (Html.BeginUmbracoForm&lt;LunchSurfaceController>("Submit", null, new { @class = "form-horizontal" }))
+@using (Html.BeginUmbracoForm<LunchSurfaceController>("Submit", null, new { @class = "form-horizontal" }))
 {
-    &lt;div class="container center_div">
-        &lt;div class="row col-sm-12">
-            &lt;div class="form-header">
-                &lt;h2>Lunch Chooser&lt;/h2>
-            &lt;/div>
-            &lt;div class="form-group">
+    <div class="container center_div">
+        <div class="row col-sm-12">
+            <div class="form-header">
+                <h2>Lunch Chooser</h2>
+            </div>
+            <div class="form-group">
                 @Html.LabelFor(m => m.FirstName, new { @class = "col-sm-4 control-label" })
-                &lt;div class="col-sm-6">
+                <div class="col-sm-6">
 
                     @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control", placeholder = "First Name" })
                     @Html.ValidationMessageFor(m => m.FirstName)
-                &lt;/div>
-            &lt;/div>
-            &lt;div class="form-group">
+                </div>
+            </div>
+            <div class="form-group">
                 @Html.LabelFor(m => m.LastName, new { @class = "col-sm-4 control-label" })
-                &lt;div class="col-sm-6">
+                <div class="col-sm-6">
                     @Html.TextBoxFor(m => m.LastName, new { @class = "form-control", placeholder = "Last Name" })
                     @Html.ValidationMessageFor(m => m.LastName)
-                &lt;/div>
-            &lt;/div>
-            &lt;div class="form-group">
+                </div>
+            </div>
+            <div class="form-group">
                 @Html.LabelFor(m => m.LunchChoice, new { @class = "col-sm-4 control-label" })
-                &lt;div class="col-sm-6">
+                <div class="col-sm-6">
                     @{
-                        List&lt;SelectListItem> items = new List&lt;SelectListItem>();
+                        List<SelectListItem> items = new List<SelectListItem>();
 
                         DataTypeService dts = new DataTypeService();
                         int collectionid = dts.GetDataTypeDefinitionByName("Lunch Choices").Id;
-                        IEnumerable&lt;string> prevalues = dts.GetPreValuesByDataTypeId(collectionid);
+                        IEnumerable<string> prevalues = dts.GetPreValuesByDataTypeId(collectionid);
 
                         foreach (string item in prevalues)
                         {
@@ -267,17 +267,17 @@ Now create a new partial view under Views/Partials called  _LunchForm.cshtml vie
                     }
                     @Html.DropDownListFor(m => m.LunchChoice, selectItems, new { @class = "form-control" })
                     @Html.ValidationMessageFor(m => m.LunchChoice)
-                &lt;/div>
-            &lt;/div>
-            &lt;div class="form-group">
-                &lt;div class="col-sm-10">
-                    &lt;label class="button-label"> &lt;/label>
-                    &lt;input type="submit" value="submit" name="submit" class="btn btn-lg btn-primary" />
-                &lt;/div>
-            &lt;/div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-10">
+                    <label class="button-label"> </label>
+                    <input type="submit" value="submit" name="submit" class="btn btn-lg btn-primary" />
+                </div>
+            </div>
 
-        &lt;/div>
-    &lt;/div>
+        </div>
+    </div>
 }
 ```
 You will notice that we are creating the SelectList in the cshtml, it finds the data type for Lunch Choices and then retrieves it’s prevalues and then builds the selectlist.  This is conscious decision which breaks a little from true MVC.  One way you can create an Umbraco form is to do it more like true MVC and create a controller which “hijacks” the routing in Umbraco, however, rather than do it that way in this tutorial we are using Umbraco to create the content page and control the routing and essentially sending our users directly into the view.  At times this is a little easier.  In the future hopefully we will also do a tutorial showing the process of hijacking the route, but for now we will do it this way.

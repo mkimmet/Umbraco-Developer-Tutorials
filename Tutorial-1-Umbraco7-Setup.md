@@ -10,6 +10,7 @@ in Umbraco.
 *   [Tutorial 2 - Creating a webpage](Tutorial-2-Creating-a-Webpage.md)
 *   [Tutorial 3 - Creating and Storing Data in Umbraco](Tutorial-3-Storing-Data-in-Umbraco.md)
 *   [Tutorial 4 - Creating a Custom Form in Umbraco](Tutorial-4-Creating-a-Custom-Form.md)
+*   [Tutorial 5 - Adding a Member-side "Admin"](Tutorial-5-Adding-a-Member-Side-Admin.md)
 
 #### Pre-Requisites
 

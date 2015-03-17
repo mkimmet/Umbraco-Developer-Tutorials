@@ -10,6 +10,7 @@ in Umbraco.
 *   [Tutorial 2 - Creating a webpage](Tutorial-2-Creating-a-Webpage.md)
 *   [Tutorial 3 - Creating and Storing Data in Umbraco](Tutorial-3-Storing-Data-in-Umbraco.md)
 *   [Tutorial 4 - Creating a Custom Form in Umbraco](Tutorial-4-Creating-a-Custom-Form.md)
+*   [Tutorial 5 - Adding a Member-side "Admin"](Tutorial-5-Adding-a-Member-Side-Admin.md)
 
 Now it’s time for us to return to Visual Studio and start doing some coding.  So open up the myweb project in Visual Studio and refresh the Solution Explorer.  You should now see a LunchFormPage.cshtml view under the Views Folder.  Right click this file and select “Include in Project” and then open the file.  Add the following code and save the file.
 ```cs
@@ -316,7 +317,7 @@ namespace myweb.Controllers
             var categoryContentType = Services.ContentTypeService.GetContentType("Lunchformpage");
             var parent = Services.ContentService.GetContentOfContentType(categoryContentType.Id).FirstOrDefault(x => x.Name == "Lunch Chooser");
 
-            //Create a new content item under a given parent (1056)
+            //Create a new content item under a given parent
             var contentService = Services.ContentService;
             var LunchContent = contentService.CreateContent(
                 lunch.FirstName + " " + lunch.LastName + DateTime.Now, //Name of the new Lunch Submission content
@@ -365,3 +366,5 @@ Enter in some data like pictured above and click submit.  The page returns back 
 ![](images/image050.png)
 
 So at this point we have a working form.  It’s not the most user friendly form in the world but it works.  In the next tutorial we will show you how to clean up the form a little bit, and then create a new page which lists all the submissions of the Lunch Chooser form.  In real life this could be used as a way to show people the submissions of the form without requiring them to log into Umbraco and learn the Umbraco Admin.
+
+[Next >> Tutorial 5 - Adding a Member-side "Admin"](Tutorial-5-Adding-a-Member-Side-Admin.md)

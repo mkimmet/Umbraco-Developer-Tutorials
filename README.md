@@ -15,5 +15,6 @@ submitted data without logging into the Umbraco admin portal.
 *   [Tutorial 2 - Creating a webpage](Tutorial-2-Creating-a-Webpage.md)
 *   [Tutorial 3 - Creating and Storing Data in Umbraco](Tutorial-3-Storing-Data-in-Umbraco.md)
 *   [Tutorial 4 - Creating a Custom Form in Umbraco](Tutorial-4-Creating-a-Custom-Form.md)
+*   [Tutorial 5 - Adding a Member-side "Admin"](Tutorial-5-Adding-a-Member-Side-Admin.md)
 
 At this point I am still working on the tutorials, and I will update this site as each tutorial is finished.
